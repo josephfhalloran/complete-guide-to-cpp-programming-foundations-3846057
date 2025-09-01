@@ -1,11 +1,15 @@
 // Complete Guide to C++ Programming Foundations
 // Challenge 01_09
-// Terminal Interaction, by Eduardo Corpeño 
+// Terminal Interaction, by Joseph Halloran 
 
 #include <iostream>
+#include <string>
 
 int main(){
-    std::cout << "Hi There!" << std::endl;
+    std::string name;
+    std::cout << "Enter your name:" << std::flush;
+    std::cin >> name;
+    std::cout << "Hi There " << name << "!" << std::endl;
 
     std::cout << std::endl << std::endl;
     return 0;
