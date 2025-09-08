@@ -6,6 +6,12 @@
 #include <vector>
 #include <string>
 
+class Inventory{
+private:
+    std::vector<std::string> *items; // Pointer to a vector of items
+    int capacity; // Max number of items allowed
+};
+
 int main(){
     
     std::cout << std::endl << std::endl;
