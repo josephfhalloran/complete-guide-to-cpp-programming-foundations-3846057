@@ -1,6 +1,6 @@
 // Complete Guide to C++ Programming Foundations
 // Exercise 09_03
-// Opening a Text File for Writing, by Eduardo Corpeño 
+// Opening a Text File for Writing, by Eduardo Corpeñ 
 
 #include <iostream>
 #include <string>
