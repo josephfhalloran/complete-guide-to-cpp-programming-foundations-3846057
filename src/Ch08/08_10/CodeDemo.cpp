@@ -1,5 +1,5 @@
 // Complete Guide to C++ Programming Foundations
-// Challenge 08_10
+// Challenge Solution 08_11
 // Virtual Pet Schedule, by Eduardo Corpeño
 
 #include <iostream>
@@ -8,7 +8,6 @@
 #include <deque>
 #include <string>
 #include <utility>
-
 
 template <typename T> using deque = std::deque<T>;
 template <typename T> using vector = std::vector<T>;
@@ -24,9 +23,26 @@ enum class Operation{
 };
 
 deque<pair<string, int>> ManagePetSchedule(const deque<pair<string, int>>& initialActivities, const vector<pair<Operation, pair<string, int>>>& operations){
-    deque<pair<string, int>> schedule;
+    deque<pair<string, int>> schedule = initialActivities;  // Initialize the schedule
 
-    // Write your code here.
+    for (const auto& op : operations){
+        switch (op.first) {
+            case Operation::ADD_FRONT:
+                schedule.push_front(op.second);
+                break;
+            case Operation::ADD_BACK:
+                schedule.push_back(op.second);
+                break;
+            case Operation::REMOVE_FRONT:
+                if (!schedule.empty())
+                    schedule.pop_front();
+                break;
+            case Operation::REMOVE_BACK:
+                if (!schedule.empty())
+                    schedule.pop_back();
+                break;
+        }
+    }
 
     return schedule;
 }
